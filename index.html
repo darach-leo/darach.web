@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darach — Professional Websites & Logo Design for Businesses in Nigeria</title>
+<meta name="description" content="Darach creates professional websites and memorable logos that help businesses look credible, attract customers, and stand out online. Websites from ₦35,000. Logos from ₦10,000.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Instrument Serif', 'serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+      },
+      colors: {
+        darach: {
+          black: '#0B0B0B',
+          offwhite: '#F8F7F4',
+          line: '#E8E6E1',
+          stone: '#C2A87E',
+          muted: '#6A6A6A',
+        }
+      }
+    }
+  }
+}
+</script>
+<style>
+  * { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  .grain::before {
+    content:""; position:absolute; inset:0; opacity:.025; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+  .reveal { opacity:0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity:1; transform:none; }
+  .nav-link { position:relative; }
+  .nav-link::after { content:""; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:#0B0B0B; transition:width .3s ease; }
+  .nav-link:hover::after, .nav-link.active::after { width:100%; }
+  .portfolio-item { transition: all .4s ease; }
+  .portfolio-item.hide { opacity:0; transform:scale(.96); pointer-events:none; position:absolute; }
+  ::selection { background:#C2A87E; color:#0B0B0B; }
+</style>
+</head>
+<body class="bg-[#F8F7F4] text-[#0B0B0B] font-sans antialiased">
+
+<!-- Top Bar -->
+<div class="hidden md:block bg-[#0B0B0B] text-[#E8E6E1] text-[11px] tracking-[0.14em] uppercase font-mono py-2.5">
+  <div class="max-w-[1280px] mx-auto px-6 flex justify-between items-center">
+    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span> Available for new projects — Accepting clients for Q4 2026</span>
+    <span class="opacity-60">Lagos, Nigeria — Working with businesses nationwide</span>
+  </div>
+</div>
+
+<!-- Navigation -->
+<header id="header" class="sticky top-0 z-50 bg-[#F8F7F4]/85 backdrop-blur-xl border-b border-[#E8E6E1] transition-all">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-[72px]">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-[#0B0B0B] text-white flex items-center justify-center font-serif text-[18px] leading-none">D</div>
+        <span class="font-semibold tracking-[0.18em] text-[15px]">DARACH</span>
+        <span class="hidden sm:inline text-[10px] tracking-widest font-mono text-[#6A6A6A] border-l border-[#E8E6E1] pl-3 ml-1">DIGITAL CREATIVE</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-[13px] tracking-wide font-medium">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/2348030417508?text=Hello%20Darach%2C%20I%20want%20to%20discuss%20a%20project%20for%20my%20business." target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-[#0B0B0B] text-white px-5 py-2.5 text-[13px] font-medium hover:bg-black transition">
+          Start Your Project
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+        <button id="mobileBtn" class="lg:hidden w-10 h-10 border border-[#E8E6E1] bg-white flex items-center justify-center">
+          <i data-lucide="menu" class="w-5 h-5" id="menuIcon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-[#E8E6E1] bg-[#F8F7F4]">
+    <div class="px-6 py-6 flex flex-col gap-5 text-sm font-medium">
+      <a href="#home" class="mobile-link">Home</a>
+      <a href="#services" class="mobile-link">Services</a>
+      <a href="#portfolio" class="mobile-link">Portfolio</a>
+      <a href="#pricing" class="mobile-link">Pricing</a>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <a href="https://wa.me/2348030417508" target="_blank" class="mt-2 bg-[#0B0B0B] text-white text-center py-3 flex items-center justify-center gap-2">
+        <i data-lucide="message-circle" class="w-4 h-4"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="home" class="relative overflow-hidden">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-6 pt-10 lg:pt-16 pb-10 lg:pb-16 items-center">
+      <!-- Left -->
+      <div class="lg:col-span-6 reveal in">
+        <div class="inline-flex items-center gap-2.5 border border-[#E8E6E1] bg-white px-3 py-1.5 rounded-full mb-6">
+          <span class="w-2 h-2 bg-[#C2A87E] rounded-full"></span>
+          <span class="text-[11px] tracking-[0.14em] uppercase font-mono font-medium">Est. 2020 — Trusted by businesses across Nigeria</span>
+        </div>
+        <h1 class="font-serif text-[42px] sm:text-[54px] lg:text-[66px] leading-[0.92] tracking-[-0.02em]">
+          Your Business<br>
+          Deserves a <span class="italic font-normal text-[#C2A87E]">Better</span><br>
+          Online Presence.
+        </h1>
+        <p class="mt-6 text-[16px] lg:text-[17px] leading-7 text-[#4A4A4A] max-w-[520px]">
+          Darach creates professional websites and memorable logos that help businesses look credible, attract customers, and stand out online.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="https://wa.me/2348030417508?text=Hello%20Darach%2C%20I%20need%20a%20professional%20website%20for%20my%20business." target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#0B0B0B] text-white px-7 py-4 text-[14px] font-medium hover:bg-black transition">
+            Get Your Website
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="https://wa.me/2348030417508?text=Hello%20Darach%2C%20I%20need%20a%20professional%20logo%20design." target="_blank" class="inline-flex items-center justify-center gap-2 bg-white border border-[#0B0B0B] text-[#0B0B0B] px-7 py-4 text-[14px] font-medium hover:bg-[#0B0B0B] hover:text-white transition">
+            Design My Logo
+          </a>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-5 text-[12px] font-mono tracking-wide text-[#6A6A6A] border-t border-[#E8E6E1] pt-6">
+          <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-[#0B0B0B]"></i> Custom design, no templates</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-[#0B0B0B]"></i> Mobile-friendly</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-[#0B0B0B]"></i> Direct support</span>
+        </div>
+
+        <div class="mt-8 flex items-center gap-6">
+          <div class="flex -space-x-2">
+            <img src="https://i.pravatar.cc/100?img=33" class="w-8 h-8 rounded-full border-2 border-[#F8F7F4] object-cover">
+            <img src="https://i.pravatar.cc/100?img=15" class="w-8 h-8 rounded-full border-2 border-[#F8F7F4] object-cover">
+            <img src="https://i.pravatar.cc/100?img=32" class="w-8 h-8 rounded-full border-2 border-[#F8F7F4] object-cover">
+          </div>
+          <div class="text-xs leading-tight">
+            <div class="flex items-center gap-1 text-amber-500"><i data-lucide="star" class="w-3 h-3 fill-amber-500"></i><i data-lucide="star" class="w-3 h-3 fill-amber-500"></i><i data-lucide="star" class="w-3 h-3 fill-amber-500"></i><i data-lucide="star" class="w-3 h-3 fill-amber-500"></i><i data-lucide="star" class="w-3 h-3 fill-amber-500"></i></div>
+            <div class="font-medium text-[#0B0B0B]">Working with 200+ businesses</div>
+            <div class="text-[#6A6A6A]">Restaurants, salons, stores & services</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual -->
+      <div class="lg:col-span-6 relative lg:h-[560px] reveal in" style="transition-delay:.12s">
+        <div class="relative bg-white border border-[#E8E6E1] rounded-[20px] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.08)]">
+          <!-- Browser bar -->
+          <div class="flex items-center justify-between px-5 py-3.5 border-b border-[#E8E6E1] bg-[#FCFCFB]">
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded-full bg-[#FF5F57]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#FFBD2E]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#28C940]"></span>
+            </div>
+            <div class="hidden sm:flex items-center gap-2 text-[11px] font-mono text-[#6A6A6A] bg-white border border-[#E8E6E1] rounded-full px-3 py-1">
+              <i data-lucide="lock" class="w-3 h-3"></i> atelier-noir.com
+            </div>
+            <i data-lucide="more-horizontal" class="w-4 h-4 text-[#6A6A6A]"></i>
+          </div>
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80&auto=format&fit=crop" alt="Restaurant website preview" class="w-full h-[300px] lg:h-[360px] object-cover">
+          <!-- Overlay card -->
+          <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur border border-[#E8E6E1] rounded-xl p-4 flex items-center justify-between shadow-lg">
+            <div>
+              <div class="text-[11px] tracking-widest font-mono uppercase text-[#6A6A6A]">Featured Project</div>
+              <div class="font-serif text-[18px] leading-none mt-1">Atelier Noir — Restaurant</div>
+              <div class="text-xs text-[#6A6A6A] mt-1">Booking + Menu • Launched in 7 days</div>
+            </div>
+            <div class="hidden sm:flex w-10 h-10 bg-[#0B0B0B] text-white items-center justify-center rounded-full">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating logos card -->
+        <div class="hidden lg:flex absolute -left-6 bottom-10 bg-[#0B0B0B] text-white rounded-2xl p-5 w-[260px] shadow-2xl">
+          <div class="w-full">
+            <div class="text-[11px] tracking-[0.14em] font-mono uppercase opacity-60">Logo Concepts</div>
+            <div class="mt-3 grid grid-cols-3 gap-2">
+              <div class="bg-white text-[#0B0B0B] rounded-lg h-[64px] flex flex-col items-center justify-center gap-1">
+                <span class="font-serif text-xl">A</span><span class="text-[8px] tracking-widest font-mono">ATELIER</span>
+              </div>
+              <div class="bg-[#C2A87E] text-[#0B0B0B] rounded-lg h-[64px] flex items-center justify-center font-serif text-xl">N</div>
+              <div class="bg-white/10 border border-white/20 rounded-lg h-[64px] flex items-center justify-center">
+                <span class="w-7 h-7 border border-white rounded-full flex items-center justify-center text-[10px]">◯</span>
+              </div>
+            </div>
+            <div class="mt-3 flex items-center justify-between text-xs">
+              <span class="opacity-70">12 concepts delivered</span>
+              <span class="w-6 h-6 bg-white text-black rounded-full flex items-center justify-center"><i data-lucide="check" class="w-3 h-3"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Price tag -->
+        <div class="hidden lg:flex absolute -right-2 top-14 bg-white border border-[#E8E6E1] rounded-full px-4 py-2 items-center gap-2 shadow-xl">
+          <span class="w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center"><i data-lucide="zap" class="w-3.5 h-3.5"></i></span>
+          <span class="text-sm font-medium">From ₦35,000</span>
+          <span class="text-xs text-[#6A6A6A]">Starter Website</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category strip -->
+    <div class="border-y border-[#E8E6E1] py-6 flex flex-wrap items-center justify-between gap-4 text-[11px] tracking-[0.16em] font-mono uppercase text-[#6A6A6A]">
+      <span>Designed for businesses like:</span>
+      <div class="flex flex-wrap gap-6 lg:gap-10 text-[#0B0B0B] font-medium">
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-[#C2A87E] rounded-full"></span> Restaurants</span>
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-[#C2A87E] rounded-full"></span> Salons & Spas</span>
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-[#C2A87E] rounded-full"></span> Fashion Stores</span>
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-[#C2A87E] rounded-full"></span> Portfolios</span>
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-[#C2A87E] rounded-full"></span> Service Providers</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-16 lg:py-24">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 reveal">
+      <div>
+        <div class="text-[11px] tracking-[0.18em] font-mono uppercase text-[#C2A87E] font-medium flex items-center gap-2">
+          <span class="w-6 h-[1px] bg-[#C2A87E]"></span> What we do
+        </div>
+        <h2 class="font-serif text-[36px] lg:text-[44px] leading-none mt-3">Built to make your<br>business look <span class="italic font-normal">credible.</span></h2>
+      </div>
+      <p class="max-w-[420px] text-[14px] leading-6 text-[#4A4A4A] lg:text-right">We focus on three essentials. No fluff, no generic templates — just professional design that positions your business for customers.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Service 1 -->
+      <div class="bg-white border border-[#E8E6E1] rounded-2xl p-7 lg:p-8 flex flex-col reveal group hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition">
+        <div class="flex items-start justify-between">
+          <div class="w-11 h-11 rounded-xl bg-[#F8F7F4] border border-[#E8E6E1] flex items-center justify-center">
+            <i data-lucide="monitor-smartphone" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[11px] font-mono tracking-widest text-[#6A6A6A]">01 — WEBSITE</span>
+        </div>
+        <h3 class="font-serif text-[22px] mt-6">Website Design</h3>
+        <p class="text-[14px] leading-6 text-[#4A4A4A] mt-3">Professional, mobile-friendly websites for businesses, brands, restaurants, salons, stores, portfolios, and service providers.</p>
+        <ul class="mt-6 space-y-2.5 text-[13px] text-[#0B0B0B]">
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-[#C2A87E]"></i> Responsive on all devices</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-[#C2A87E]"></i> Fast, clean & SEO-ready</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-[#C2A87E]"></i> Booking, store or portfolio ready</li>
+        </ul>
+        <a href="https://wa.me/2348030417508?text=Hello%20Darach%2C%20I%20need%20a%20website%20for%20my%20business." target="_blank" class="mt-7 inline-flex items-center gap-2 text-[13px] font-medium border-b border-[#0B0B0B] pb-1 self-start group-hover:gap-3 transition-all">Explore websites <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+      </div>
+      <!-- Service 2 -->
+      <div class="bg-white border border-[#E8E6E1] rounded-2xl p-7 lg:p-8 flex flex-col reveal group hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition" style="transition-delay:.08s">
+        <div class="flex items-start justify-between">
+          <div class="w-11 h-11 rounded-xl bg-[#0B0B0B] text-white flex items-center justify-center">
+            <i data-lucide="pen-tool" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[11px] font-mono tracking-widest text-[#6A6A6A]">02 — IDENTITY</span>
+        </div>
+        <h3 class="font-serif text-[22px] mt-6">Logo Design</h3>
+        <p class="text-[14px] leading-6 text-[#4A4A4A] mt-3">Clean, memorable, professional logos designed to represent your business and build a recognizable brand.</p>
+        <ul class="mt-6 space-y-2.5 text-[13px] text-[#0B0B0B]">
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-[#C2A87E]"></i> Multiple concepts & revisions</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-[#C2A87E]"></i> All file formats delivered</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-[#C2A87E]"></i> Works on signage, social & print</li>
+        </ul>
+        <a href="https://wa.me/2348030417508?text=Hello%20Darach%2C%20I%20need%20a%20logo%20for%20my%20business." target="_blank" class="mt-7 inline-flex items-center gap-2 text-[13px] font-medium border-b border-[#0B0B0B] pb-1 self-start group-hover:gap-3 transition-all">See logo work <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+      </div>
+      <!-- Service 3 -->
+      <div class="bg-[#0B0B0B] text-white rounded-2xl p-7 lg:p-8 flex flex-col reveal group relative overflow-hidden" style="transition-delay:.16s">
+        <div class="absolute inset-0 opacity-[0.06]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 22px 22px;"></div>
+        <div class="flex items-start justify-between relative">
+          <div class="w-11 h-11 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center">
+            <i data-lucide="layers" class="w-5 h-5 text-white"></i>
+          </div>
+          <span class="text-[11px] font-mono tracking-widest text-white/60">03 — BRANDING</span>
+        </div>
+        <h3 class="font-serif text-[22px] mt-6 relative">Business Branding</h3>
+        <p class="text-[14px] leading-6 text-white/70 mt-3 relative">A consistent visual identity across your website, logo, social media, and marketing materials.</p>
+        <ul class="mt-6 space-y-2.5 text-[13px] text-white/90 relative">
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-[#C2A87E]"></i> Colors, typography & usage guide</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-[#C2A87E]"></i> Social & packaging templates</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-[#C2A87E]"></i> Cohesive brand presence</li>
+        </ul>
+        <a href="https://wa.me/2348030417508?text=Hello%20Darach%2C%20I%20need%20a%20full%20branding%20package." target="_blank" class="mt-7 inline-flex items-center gap-2 text-[13px] font-medium bg-white text-[#0B0B0B] px-4 py-2.5 rounded-full self-start hover:bg-[#E8E6E1] transition relative">Start branding <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY DARACH -->
+<section class="bg-[#0B0B0B] text-white relative overflow-hidden grain">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 lg:py-20 relative">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5 reveal">
+        <div class="text-[11px] tracking-[0.18em] font-mono uppercase text-[#C2A87E]">Why Darach</div>
+        <h2 class="font-serif text-[36px] lg:text-[42px] leading-[0.95] mt-3">Professional,<br>straightforward,<br><span class="italic font-normal text-[#C2A87E]">and built for you.</span></h2>
+        <p class="text-white/60 text-[14px] leading-6 mt-4 max-w-[380px]">We don’t use generic templates. Every design is crafted for your specific business, so you look established from day one.</p>
+        <div class="mt-8 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#0B0B0B] font-serif text-xl">D</div>
+          <div class="text-sm">
+            <div class="font-medium">Direct customer support</div>
+            <div class="text-white/60 text-xs">Chat with us on WhatsApp anytime</div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4 reveal" style="transition-delay:.1s">
+        <div class="bg-white/[0.06] border border-white/10 rounded-2xl p-6">
+          <div class="w-9 h-9 rounded-lg bg-[#C2A87E] text-[#0B0B0B] flex items-center justify-center"><i data-lucide="sparkles" class="w-4 h-4"></i></div>
+          <h4 class="font-medium mt-4">Professional designs</h4>
+          <p class="text-sm text-white/60 mt-1 leading-5">Clean, credible visuals that build trust with customers instantly.</p>
+        </div>
+        <div class="bg-white/[0.06] border border-white/10 rounded-2xl p-6">
+          <div class="w-9 h-9 rounded-lg bg-white text-[#0B0B0B] flex items-center justify-center"><i data-lucide="smartphone" class="w-4 h-4"></i></div>
+          <h4 class="font-medium mt-4">Mobile-friendly</h4>
+          <p class="text-sm text-white/60 mt-1 leading-5">Every website looks perfect on phones, tablets, and desktops.</p>
+        </div>
+        <div class="bg-white/[0.06] border border-white/10 rounded-2xl p-6">
+          <div class="w-9 h-9 rounded-lg bg-white text-[#0B0B0B] flex items-center justify-center"><i data-lucide="layout" class="w-4 h-4"></i></div>
+          <h4 class="font-medium mt-4">Modern & clean</h4>
+          <p class="text-sm text-white/60 mt-1 leading-5">Editorial layouts with strong hierarchy — no clutter.</p>
+        </div>
+        <div class="bg-white/[0.06] border border-white/10 rounded-2xl p-6">
+          <div class="w-9 h-9 rounded-lg bg-white text-[#0B0B0B] flex items-center justify-center"><i data-lucide="clock-3" class="w-4 h-4"></i></div>
+          <h4 class="font-medium mt-4">Fast delivery</h4>
+          <p class="text-sm text-white/60 mt-1 leading-5">Starter sites in days, not weeks. Clear timeline from start.</p>
+        </div>
+        <div class="bg-white/[0.06] border border-white/10 rounded-2xl p-6">
+          <div class="w-9 h-9 rounded-lg bg-white text-[#0B0B0B] flex items-center justify-center"><i data-lucide="badge-dollar-sign" class="w-4 h-4"></i></div>
+          <h4 class="font-medium mt-4">Affordable packages</h4>
+          <p class="text-sm text-white/60 mt-1 leading-5">Transparent pricing from ₦10,000 — no hidden fees.</p>
+        </div>
+        <div class="bg-white/[0.06] border border-white/10 rounded-2xl p-6">
+          <div class="w-9 h-9 rounded-lg bg-[#C2A87E] text-[#0B0B0B] flex items-center justify-center"><i data-lucide="target" class="w-4 h-4"></i></div>
+          <h4 class="font-medium mt-4">Made for you</h4>
+          <p class="text-sm text-white/60 mt-1 leading-5">Designed around your business, customers, and goals.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="py-16 lg:py-24">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 reveal">
+      <div>
+        <div class="text-[11px] tracking-[0.18em] font-mono uppercase text-[#C2A87E] font-medium">Selected Work</div>
+        <h2 class="font-serif text-[36px] lg:text-[44px] leading-none mt-2">Portfolio</h2>
+        <p class="text-[14px] text-[#4A4A4A] mt-2">A preview of websites, logos and brand systems crafted for real businesses.</p>
+      </div>
+      <div class="flex items-center gap-2 p-1 bg-white border border-[#E8E6E1] rounded-full self-start lg:self-auto">
+        <button data-filter="all" class="filter-btn active bg-[#0B0B0B] text-white px-5 py-2 rounded-full text-xs font-medium tracking-wide">All Work</button>
+        <button data-filter="websites" class="filter-btn px-5 py-2 rounded-full text-xs font-medium tracking-wide text-[#4A4A4A] hover:text-[#0B0B0B]">Websites</button>
+        <button data-filter="logos" class="filter-btn px-5 py-2 rounded-full text-xs font-medium tracking-wide text-[#4A4A4A] hover:text-[#0B0B0B]">Logos</button>
+        <button data-filter="branding" class="filter-btn px-5 py-2 rounded-full text-xs font-medium tracking-wide text-[#4A4A4A] hover:text-[#0B0B0B]">Branding</button>
+      </div>
+    </div>
+
+    <div id="portfolioGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 relative">
+      <!-- Websites -->
+      <article data-category="websites" class="portfolio-item group bg-white border border-[#E8E6E1] rounded-2xl overflow-hidden reveal">
+        <div class="aspect-[4/2.9] overflow-hidden bg-[#F0EDE8] relative">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80&auto=format&fit=crop" alt="Atelier Noir website" class="w-full h-full object-cover group-hover:scale-[1.04] transition duration-700">
+          <span class="absolute top-3 left-3 bg-white text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded-full border border-black/10">Website — Restaurant</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-serif text-[18px]">Atelier Noir</h3>
+          <p class="text-xs text-[#6A6A6A] mt-1">Dark, editorial restaurant site with reservations & menu.</p>
+          <div class="mt-3 flex items-center gap-2 text-[11px] font-mono uppercase tracking-wide text-[#6A6A6A]"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> Live preview</div>
+        </div>
+      </article>
+
+      <article data-category="branding" class="portfolio-item group bg-white border border-[#E8E6E1] rounded-2xl overflow-hidden reveal" style="transition-delay:.06s">
+        <div class="aspect-[4/2.9] overflow-hidden bg-[#EDE9E3] relative p-6 flex items-center justify-center">
+          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80&auto=format&fit=crop" alt="Aurelia brand" class="w-full h-full object-cover rounded-xl">
+          <span class="absolute top-3 left-3 bg-[#0B0B0B] text-white text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded-full">Branding — Café</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-serif text-[18px]">Aurelia Coffee</h3>
+          <p class="text-xs text-[#6A6A6A] mt-1">Warm brand system: packaging, menu & social templates.</p>
+        </div>
+      </article>
+
+      <article data-category="logos" class="portfolio-item group bg-[#0B0B0B] text-white border border-[#0B0B0B] rounded-2xl overflow-hidden reveal" style="transition-delay:.12s">
+        <div class="aspect-[4/2.9] flex flex-col items-center justify-center gap-3 p-6 relative">
+          <span class="absolute top-3 left-3 bg-white text-[#0B0B0B] text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded-full">Logo — Fashion</span>
+          <div class="w-20 h-20 bg-white text-[#0B0B0B] rounded-full flex items-center justify-center font-serif text-3xl">M</div>
+          <div class="text-center">
+            <div class="tracking-[0.22em] text-sm font-medium">MERIDIAN</div>
+            <div class="text-[10px] tracking-[0.2em] font-mono opacity-60">ATELIER</div>
+          </div>
+        </div>
+        <div class="p-5 border-t border-white/10">
+          <h3 class="font-serif text-[18px]">Meridian Atelier</h3>
+          <p class="text-xs text-white/60 mt-1">Minimal wordmark for a fashion boutique.</p>
+        </div>
+      </article>
+
+      <article data-category="websites" class="portfolio-item group bg-white border border-[#E8E6E1] rounded-2xl overflow-hidden reveal">
+        <div class="aspect-[4/2.9] overflow-hidden bg-[#EFEFEF] relative">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80&auto=format&fit=crop" alt="Bloom salon website" class="w-full h-full object-cover group-hover:scale-[1.04] transition duration-700">
+          <span class="absolute top-3 left-3 bg-white text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded-full border border-black/10">Website — Salon</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-serif text-[18px]">Bloom Salon</h3>
+          <p class="text-xs text-[#6A6A6A] mt-1">Soft, elegant site with booking and service catalogue.</p>
+        </div>
+      </article>
+
+      <article data-category="logos" class="portfolio-item group bg-white border border-[#E8E6E1] rounded-2xl overflow-hidden reveal" style="transition-delay:.06s">
+        <div class="aspect-[4/2.9] bg-[#F8F7F4] flex items-center justify-center p-6 relative">
+          <span class="absolute top-3 left-3 bg-[#C2A87E] text-[#0B0B0B] text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded-full">Logo — Homeware</span>
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto border-[1.5px] border-[#0B0B0B] rounded-full flex items-center justify-center mb-3">
+              <span class="font-serif text-2xl">◯</span>
+            </div>
+            <div class="font-serif text-xl tracking-wide">Nori & Co</div>
+            <div class="text-[10px] tracking-[0.18em] font-mono text-[#6A6A6A]">CERAMICS — LAGOS</div>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="font-serif text-[18px]">Nori & Co</h3>
+          <p class="text-xs text-[#6A6A6A] mt-1">Circular emblem built for packaging & stamps.</p>
+        </div>
+      </article>
+
+      <article data-category="websites" class="portfolio-item group bg-white border border-[#E8E6E1] rounded-2xl overflow-hidden reveal" style="transition-delay:.12s">
+        <div class="aspect-[4/2.9] overflow-hidden bg-[#E8E6E1] relative">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80&auto=format&fit=crop" alt="Cove store website" class="w-full h-full object-cover group-hover:scale-[1.04] transition duration-700">
+          <span class="absolute top-3 left-3 bg-white text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded-full border border-black/10">Website — Store</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-serif text-[18px]">Cove Store</h3>
+          <p class="text-xs text-[#6A6A6A] mt-1">Clean e-commerce for a fashion retailer.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-8 flex justify-center">
+      <a href="https://wa.me/2348030417508?text=Hello%20Darach%2C%20I%20would%20like%20to%20see%20more%20of%20your%20portfolio." target="_blank" class="inline-flex items-center gap-2 text-sm font-medium border border-[#0B0B0B] px-6 py-3 hover:bg-[#0B0B0B] hover:text-white transition rounded-full">
+        Request full portfolio <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-16 lg:py-24 bg-white border-y border-[#E8E6E1]">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <div class="inline-flex items-center gap-2 border border-[#E8E6E1] rounded-full px-3 py-1 text-[11px] font-mono tracking-widest uppercase">
+        <span class="w-1.5 h-1.5 bg-[#C2A87E] rounded-full"></span> Simple, transparent pricing
+      </div>
+      <h2 class="font-serif text-[36px] lg:text-[44px] leading-none mt-4">Packages for every<br><span class="italic font-normal">stage of business.</span></h2>
+      <p class="text-sm text-[#4A4A4A] mt-3 leading-6">No hidden fees. Choose what you need — we’ll handle the rest and keep you updated on WhatsApp.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-5 mt-10">
+      <!-- Starter -->
+      <div class="bg-[#F8F7F4] border border-[#E8E6E1] rounded-2xl p-6 flex flex-col reveal">
+        <div class="text-[11px] font-mono tracking-[0.16em] uppercase text-[#6A6A6A]">Starter Website</div>
+        <div class="mt-3 flex items-baseline gap-1">
+          <span class="text-3xl font-semibold tracking-tight">₦35,000</span>
+          <span class="text-xs text-[#6A6A6A]">starting from</span>
+        </div>
+        <p class="text-[13px] leading-5 text-[#4A4A4A] mt-3">For small businesses that need a professional online presence, fast.</p>
+        <ul class="mt-5 space-y-2.5 text-[13px]">
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0B0B0B]"></i> 1–4 pages (Home, About, Services, Contact)</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0B0B0B]"></i> Mobile-friendly & SEO-ready</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0B0B0B]"></i> WhatsApp & contact integration</li>
+          <li class="flex gap-2 text-[#6A6A6A]"><i data-lucide="check" class="w-4 h-4"></i> Basic support after launch</li>
+        </ul>
+        <a href="https://wa.me/2348030417508?text=Hello%20Darach%2C%20I%20am%20interested%20in%20the%20Starter%20Website%20package%20(%E2%82%A635%2C000)." target="_blank" class="mt-6 w-full bg-white border border-[#0B0B0B] text-center py-3 text-sm font-medium hover:bg-[#0B0B0B] hover:text-white transition rounded-full">Get Started</a>
+        <div class="text-[11px] text-center text-[#6A6A6A] mt-2">Delivery in 3–5 days</div>
+      </div>
+
+      <!-- Business - Featured -->
+      <div class="bg-[#0B0B0B] text-white rounded-2xl p-6 flex flex-col relative overflow-hidden reveal lg:scale-[1.02] shadow-xl" style="transition-delay:.06s">
+        <div class="absolute top-4 right-4 bg-[#C2A87E] text-[#0B0B0B] text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded-full font-medium">Most Popular</div>
+        <div class="text-[11px] font-mono tracking-[0.16em] uppercase text-white/60">Business Website</div>
+        <div class="mt-3 flex items-baseline gap-1">
+          <span class="text-3xl font-semibold tracking-tight">₦65,000</span>
+          <span class="text-xs text-white/60">starting from</span>
+        </div>
+        <p class="text-[13px] leading-5 text-white/70 mt-3">For businesses that need a complete professional website.</p>
+        <ul class="mt-5 space-y-2.5 text-[13px] text-white/90">
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#C2A87E]"></i> Up to 8 pages + blog/store option</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#C2A87E]"></i> Booking, store or portfolio features</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#C2A87E]"></i> Advanced SEO & speed optimization</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#C2A87E]"></i> Priority support & training</li>
+        </ul>
+        <a href="https://wa.me/2348030417508?text=Hello%20Darach%2C%20I%20am%20interested%20in%20the%20Business%20Website%20package%20(%E2%82%A665%2C000)." target="_blank" class="mt-6 w-full bg-white text-[#0B0B0B] text-center py-3 text-sm font-medium hover:bg-[#E8E6E1] transition rounded-full">Get Started</a>
+        <div class="text-[11px] text-center text-white/50 mt-2">Delivery in 7–10 days</div>
+      </div>
+
+      <!-- Logo -->
+      <div class="bg-[#F8F7F4] border border-[#E8E6E1] rounded-2xl p-6 flex flex-col reveal" style="transition-delay:.12s">
+        <div class="text-[11px] font-mono tracking-[0.16em] uppercase text-[#6A6A6A]">Logo Design</div>
+        <div class="mt-3 flex items-baseline gap-1">
+          <span class="text-3xl font-semibold tracking-tight">₦10,000</span>
+          <span class="text-xs text-[#6A6A6A]">starting from</span>
+        </div>
+        <p class="text-[13px] leading-5 text-[#4A4A4A] mt-3">Professional custom logo designed to represent your brand.</p>
+        <ul class="mt-5 space-y-2.5 text-[13px]">
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0B0B0B]"></i> 3 unique concepts</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0B0B0B]"></i> 3 revision rounds</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0B0B0B]"></i> All files (PNG, SVG, PDF)</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0B0B0B]"></i> Social media kit included</li>
+        </ul>
+        <a href="https://wa.me/2348030417508?text=Hello%20Darach%2C%20I%20need%20a%20logo%20design%20(%E2%82%A610%2C000%20package)." target="_blank" class="mt-6 w-full bg-white border border-[#0B0B0B] text-center py-3 text-sm font-medium hover:bg-[#0B0B0B] hover:text-white transition rounded-full">Get Started</a>
+        <div class="text-[11px] text-center text-[#6A6A6A] mt-2">Delivery in 2–3 days</div>
+      </div>
+
+      <!-- Branding -->
+      <div class="bg-white border border-[#0B0B0B] rounded-2xl p-6 flex flex-col reveal" style="transition-delay:.18s">
+        <div class="text-[11px] font-mono tracking-[0.16em] uppercase text-[#6A6A6A]">Branding Package</div>
+        <div class="mt-3 flex items-baseline gap-1">
+          <span class="text-2xl font-semibold tracking-tight">Custom</span>
+          <span class="text-xs text-[#6A6A6A]">pricing</span>
+        </div>
+        <p class="text-[13px] leading-5 text-[#4A4A4A] mt-3">Logo + business branding + professional website.</p>
+        <ul class="mt-5 space-y-2.5 text-[13px]">
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0B0B0B]"></i> Everything in Business + Logo</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0B0B0B]"></i> Brand guidelines & assets</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0B0B0B]"></i> Social & print templates</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0B0B0B]"></i> Dedicated brand manager</li>
+        </ul>
+        <a href="https://wa.me/2348030417508?text=Hello%20Darach%2C%20I%20am%20interested%20in%20the%20Branding%20Package%20(Logo%20%2B%20Branding%20%2B%20Website).%20Please%20share%20custom%20pricing." target="_blank" class="mt-6 w-full bg-[#0B0B0B] text-white text-center py-3 text-sm font-medium hover:bg-black transition rounded-full">Get Custom Quote</a>
+        <div class="text-[11px] text-center text-[#6A6A6A] mt-2">Tailored to your business</div>
+      </div>
+    </div>
+
+    <div class="mt-6 bg-[#F8F7F4] border border-dashed border-[#E8E6E1] rounded-xl px-4 py-3 flex flex-wrap items-center justify-center gap-2 text-xs text-[#4A4A4A] text-center">
+      <i data-lucide="shield-check" class="w-4 h-4"></i> Secure payments • Clear deliverables • Revisions included • No subscription required
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="py-16 lg:py-24">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row gap-8 items-start">
+      <div class="lg:w-[340px] shrink-0 reveal">
+        <div class="text-[11px] tracking-[0.18em] font-mono uppercase text-[#C2A87E] font-medium">How it works</div>
+        <h2 class="font-serif text-[34px] leading-none mt-3">From idea to launch<br><span class="italic font-normal">in 6 simple steps.</span></h2>
+        <p class="text-sm text-[#4A4A4A] leading-6 mt-4">No complicated process. We keep you involved, keep it clear, and keep it moving on WhatsApp.</p>
+        <a href="https://wa.me/2348030417508?text=Hello%20Darach%2C%20I%20want%20to%20start%20my%20project." target="_blank" class="hidden lg:inline-flex mt-6 items-center gap-2 border border-[#0B0B0B] px-5 py-2.5 text-sm font-medium hover:bg-[#0B0B0B] hover:text-white transition rounded-full">Start your project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+
+      <div class="flex-1 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full reveal" style="transition-delay:.08s">
+        <div class="bg-white border border-[#E8E6E1] rounded-2xl p-6 relative">
+          <div class="w-8 h-8 rounded-full bg-[#0B0B0B] text-white flex items-center justify-center text-xs font-mono">01</div>
+          <h4 class="font-medium mt-4">Tell us about your business</h4>
+          <p class="text-[13px] text-[#6A6A6A] mt-1 leading-5">Share what you do, your customers, and the style you like.</p>
+        </div>
+        <div class="bg-white border border-[#E8E6E1] rounded-2xl p-6 relative">
+          <div class="w-8 h-8 rounded-full bg-[#0B0B0B] text-white flex items-center justify-center text-xs font-mono">02</div>
+          <h4 class="font-medium mt-4">Choose your service</h4>
+          <p class="text-[13px] text-[#6A6A6A] mt-1 leading-5">Website, logo, or full branding — we’ll confirm scope & price.</p>
+        </div>
+        <div class="bg-[#C2A87E] border border-[#C2A87E] rounded-2xl p-6 relative">
+          <div class="w-8 h-8 rounded-full bg-[#0B0B0B] text-white flex items-center justify-center text-xs font-mono">03</div>
+          <h4 class="font-medium mt-4">We design</h4>
+          <p class="text-[13px] text-[#0B0B0B]/70 mt-1 leading-5">We create your website or logo based on your brief.</p>
+        </div>
+        <div class="bg-white border border-[#E8E6E1] rounded-2xl p-6 relative">
+          <div class="w-8 h-8 rounded-full bg-[#0B0B0B] text-white flex items-center justify-center text-xs font-mono">04</div>
+          <h4 class="font-medium mt-4">You review</h4>
+          <p class="text-[13px] text-[#6A6A6A] mt-1 leading-5">Preview on your phone and desktop. Share feedback easily.</p>
+        </div>
+        <div class="bg-white border border-[#E8E6E1] rounded-2xl p-6 relative">
+          <div class="w-8 h-8 rounded-full bg-[#0B0B0B] text-white flex items-center justify-center text-xs font-mono">05</div>
+          <h4 class="font-medium mt-4">Final adjustments</h4>
+          <p class="text-[13px] text-[#6A6A6A] mt-1 leading-5">We refine colours, text, and layout until it feels right.</p>
+        </div>
+        <div class="bg-[#0B0B0B] text-white rounded-2xl p-6 relative overflow-hidden">
+          <div class="w-8 h-8 rounded-full bg-white text-[#0B0B0B] flex items-center justify-center text-xs font-mono">06</div>
+          <h4 class="font-medium mt-4">Launch — you’re ready</h4>
+          <p class="text-[13px] text-white/60 mt-1 leading-5">Your business is live and ready for customers.</p>
+          <div class="mt-3 inline-flex items-center gap-1 text-xs font-medium text-[#C2A87E]"><i data-lucide="rocket" class="w-3.5 h-3.5"></i> Go live</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-16 lg:py-24 bg-white border-y border-[#E8E6E1]">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-6 reveal">
+        <div class="relative rounded-[24px] overflow-hidden bg-[#F8F7F4] border border-[#E8E6E1] aspect-[4/3.2]">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&auto=format&fit=crop" alt="Darach studio" class="w-full h-full object-cover">
+          <div class="absolute bottom-4 left-4 bg-white border border-[#E8E6E1] rounded-xl px-4 py-3 flex items-center gap-3 shadow-lg">
+            <div class="w-9 h-9 bg-[#0B0B0B] text-white flex items-center justify-center font-serif">D</div>
+            <div>
+              <div class="text-xs font-semibold tracking-widest">DARACH</div>
+              <div class="text-[11px] font-mono tracking-widest text-[#6A6A6A]">DIGITAL CREATIVE • LAGOS</div>
+            </div>
+          </div>
+          <div class="absolute top-4 right-4 bg-[#0B0B0B] text-white text-xs font-mono px-3 py-1.5 rounded-full">Available for new projects</div>
+        </div>
+      </div>
+      <div class="lg:col-span-6 reveal" style="transition-delay:.08s">
+        <div class="text-[11px] tracking-[0.18em] font-mono uppercase text-[#C2A87E] font-medium">About Darach</div>
+        <h2 class="font-serif text-[34px] lg:text-[42px] leading-[0.95] mt-3">We help businesses<br>look <span class="italic font-normal">ready for customers.</span></h2>
+        <p class="text-[15px] leading-7 text-[#4A4A4A] mt-5">Darach is a digital creative brand focused on helping businesses build a professional identity online. From modern websites to memorable logos, we create digital designs that make businesses look professional and ready for customers.</p>
+        <p class="text-[14px] leading-6 text-[#4A4A4A] mt-4">We work directly with owners — no agency layers, no jargon. You talk to the designer, you see progress daily on WhatsApp, and you launch with confidence.</p>
+
+        <div class="mt-8 grid grid-cols-3 gap-6 border-t border-[#E8E6E1] pt-6">
+          <div>
+            <div class="font-serif text-2xl">200+</div>
+            <div class="text-[11px] font-mono uppercase tracking-widest text-[#6A6A6A]">Businesses<br>supported</div>
+          </div>
+          <div>
+            <div class="font-serif text-2xl">3–10 days</div>
+            <div class="text-[11px] font-mono uppercase tracking-widest text-[#6A6A6A]">Average<br>delivery</div>
+          </div>
+          <div>
+            <div class="font-serif text-2xl">100%</div>
+            <div class="text-[11px] font-mono uppercase tracking-widest text-[#6A6A6A]">Custom<br>design</div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex items-center gap-3 text-sm">
+          <img src="https://i.pravatar.cc/100?img=12" class="w-9 h-9 rounded-full object-cover">
+          <div>
+            <div class="font-medium text-sm">Founder, Darach</div>
+            <div class="text-xs text-[#6A6A6A]">Designing brands that earn trust — since 2020</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-[#0B0B0B] text-white relative overflow-hidden grain">
+  <div class="max-w-[900px] mx-auto px-6 lg:px-8 py-16 lg:py-20 text-center relative">
+    <div class="inline-flex items-center gap-2 border border-white/15 rounded-full px-3 py-1 text-[11px] font-mono tracking-widest uppercase text-white/70">
+      <span class="w-1.5 h-1.5 bg-[#C2A87E] rounded-full"></span> Ready to start?
+    </div>
+    <h2 class="font-serif text-[36px] lg:text-[52px] leading-[0.9] mt-4">Ready to Make Your<br><span class="italic font-normal text-[#C2A87E]">Business Stand Out?</span></h2>
+    <p class="text-white/60 text-[15px] leading-6 mt-4 max-w-[560px] mx-auto">Let Darach create a website or logo that truly represents your business — clean, credible, and ready for customers.</p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="https://wa.me/2348030417508?text=Hello%20Darach%2C%20I%20am%20ready%20to%20start%20my%20project.%20Please%20guide%20me." target="_blank" class="inline-flex items-center justify-center gap-2 bg-white text-[#0B0B0B] px-8 py-4 text-sm font-medium hover:bg-[#E8E6E1] transition rounded-full">
+        Start Your Project
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+      <a href="tel:08030417508" class="inline-flex items-center justify-center gap-2 border border-white/20 text-white px-8 py-4 text-sm font-medium hover:bg-white hover:text-[#0B0B0B] transition rounded-full">
+        <i data-lucide="phone" class="w-4 h-4"></i> 0803 041 7508
+      </a>
+    </div>
+    <div class="mt-6 text-xs font-mono tracking-wide text-white/40">Response time — typically within 1 hour on WhatsApp • Mon–Sat, 8am–8pm WAT</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-16 lg:py-24">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5 reveal">
+        <div class="text-[11px] tracking-[0.18em] font-mono uppercase text-[#C2A87E] font-medium">Contact</div>
+        <h2 class="font-serif text-[34px] lg:text-[40px] leading-none mt-3">Let’s talk about<br>your business.</h2>
+        <p class="text-sm leading-6 text-[#4A4A4A] mt-4 max-w-[420px]">Fastest way to reach us is WhatsApp. We’ll reply with ideas, pricing, and next steps — usually within an hour.</p>
+
+        <div class="mt-8 space-y-3">
+          <a href="https://wa.me/2348030417508?text=Hello%20Darach%2C%20I%20would%20like%20to%20discuss%20a%20website%2Flogo%20for%20my%20business." target="_blank" class="flex items-center gap-4 bg-[#25D366] text-white rounded-2xl p-4 hover:brightness-105 transition">
+            <div class="w-11 h-11 bg-white text-[#25D366] rounded-full flex items-center justify-center shrink-0"><i data-lucide="message-circle" class="w-5 h-5"></i></div>
+            <div class="flex-1">
+              <div class="text-[11px] font-mono tracking-widest uppercase opacity-90">Primary contact — Fastest response</div>
+              <div class="font-semibold">Chat on WhatsApp</div>
+              <div class="text-sm opacity-90">+234 803 041 7508</div>
+            </div>
+            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+          </a>
+
+          <div class="grid grid-cols-2 gap-3">
+            <a href="tel:08030417508" class="bg-white border border-[#E8E6E1] rounded-2xl p-4 flex items-center gap-3 hover:border-[#0B0B0B] transition">
+              <div class="w-9 h-9 bg-[#0B0B0B] text-white rounded-full flex items-center justify-center"><i data-lucide="phone" class="w-4 h-4"></i></div>
+              <div>
+                <div class="text-[10px] font-mono uppercase tracking-widest text-[#6A6A6A]">Phone</div>
+                <div class="text-sm font-medium">0803 041 7508</div>
+              </div>
+            </a>
+            <a href="mailto:darachweb@gmail.com" class="bg-white border border-[#E8E6E1] rounded-2xl p-4 flex items-center gap-3 hover:border-[#0B0B0B] transition">
+              <div class="w-9 h-9 bg-white border border-[#E8E6E1] rounded-full flex items-center justify-center"><i data-lucide="mail" class="w-4 h-4"></i></div>
+              <div>
+                <div class="text-[10px] font-mono uppercase tracking-widest text-[#6A6A6A]">Email</div>
+                <div class="text-xs font-medium break-all">darachweb@gmail.com</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="bg-white border border-[#E8E6E1] rounded-2xl p-4 flex items-center gap-3 text-sm">
+            <i data-lucide="map-pin" class="w-4 h-4 text-[#C2A87E]"></i>
+            <span class="text-[#4A4A4A]">Based in Lagos, working with businesses across Nigeria — remote & in-person support available.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 reveal" style="transition-delay:.08s">
+        <div class="bg-white border border-[#E8E6E1] rounded-[20px] p-6 lg:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.04)]">
+          <h3 class="font-serif text-xl">Send a quick brief</h3>
+          <p class="text-xs text-[#6A6A6A] mt-1">Fill this and we’ll continue on WhatsApp — no spam, just your project details.</p>
+
+          <form id="contactForm" class="mt-6 space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <label class="block">
+                <span class="text-[11px] font-mono tracking-widest uppercase text-[#6A6A6A]">Your name</span>
+                <input id="fName" required type="text" placeholder="e.g., Chinedu Okoro" class="mt-1 w-full bg-[#F8F7F4] border border-[#E8E6E1] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#0B0B0B] focus:bg-white transition">
+              </label>
+              <label class="block">
+                <span class="text-[11px] font-mono tracking-widest uppercase text-[#6A6A6A]">Business name</span>
+                <input id="fBusiness" required type="text" placeholder="e.g., Bloom Salon" class="mt-1 w-full bg-[#F8F7F4] border border-[#E8E6E1] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#0B0B0B] focus:bg-white transition">
+              </label>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <label class="block">
+                <span class="text-[11px] font-mono tracking-widest uppercase text-[#6A6A6A]">Service needed</span>
+                <select id="fService" class="mt-1 w-full bg-[#F8F7F4] border border-[#E8E6E1] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#0B0B0B] focus:bg-white transition">
+                  <option value="Website Design">Website Design</option>
+                  <option value="Logo Design">Logo Design</option>
+                  <option value="Branding Package">Branding Package</option>
+                  <option value="Not sure - need advice">Not sure — need advice</option>
+                </select>
+              </label>
+              <label class="block">
+                <span class="text-[11px] font-mono tracking-widest uppercase text-[#6A6A6A]">Budget (optional)</span>
+                <select id="fBudget" class="mt-1 w-full bg-[#F8F7F4] border border-[#E8E6E1] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#0B0B0B] focus:bg-white transition">
+                  <option>₦10,000 — Logo</option>
+                  <option selected>₦35,000 — Starter Website</option>
+                  <option>₦65,000 — Business Website</option>
+                  <option>Custom — Branding Package</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="block">
+              <span class="text-[11px] font-mono tracking-widest uppercase text-[#6A6A6A]">Tell us about your business</span>
+              <textarea id="fMessage" rows="4" placeholder="What does your business do? What style do you like? Do you have reference websites/logos?" class="mt-1 w-full bg-[#F8F7F4] border border-[#E8E6E1] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#0B0B0B] focus:bg-white transition resize-none"></textarea>
+            </label>
+
+            <button type="submit" class="w-full bg-[#0B0B0B] text-white rounded-full py-4 text-sm font-medium flex items-center justify-center gap-2 hover:bg-black transition">
+              <i data-lucide="send" class="w-4 h-4"></i> Send via WhatsApp
+            </button>
+            <div class="text-[11px] text-center text-[#6A6A6A]">Clicking send will open WhatsApp with your message ready to send. No data is stored on a server.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-[#0B0B0B] text-white border-t border-white/10">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-8 py-10">
+    <div class="flex flex-col lg:flex-row justify-between gap-8">
+      <div>
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-white text-[#0B0B0B] flex items-center justify-center font-serif text-[18px]">D</div>
+          <span class="tracking-[0.18em] text-sm font-semibold">DARACH</span>
+          <span class="text-[10px] tracking-widest font-mono opacity-60 border-l border-white/20 pl-3">DIGITAL CREATIVE</span>
+        </div>
+        <p class="text-sm text-white/60 mt-3 max-w-[380px] leading-6">Professional websites and memorable logos that help businesses look credible and attract customers.</p>
+      </div>
+      <div class="flex gap-10 text-sm">
+        <div>
+          <div class="text-xs font-mono tracking-widest uppercase opacity-50 mb-3">Navigation</div>
+          <div class="space-y-2 text-white/80">
+            <a href="#services" class="block hover:text-white">Services</a>
+            <a href="#portfolio" class="block hover:text-white">Portfolio</a>
+            <a href="#pricing" class="block hover:text-white">Pricing</a>
+            <a href="#about" class="block hover:text-white">About</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-mono tracking-widest uppercase opacity-50 mb-3">Contact</div>
+          <div class="space-y-2 text-white/80">
+            <a href="https://wa.me/2348030417508" target="_blank" class="block hover:text-white">WhatsApp: +234 803 041 7508</a>
+            <a href="tel:08030417508" class="block hover:text-white">Phone: 0803 041 7508</a>
+            <a href="mailto:darachweb@gmail.com" class="block hover:text-white">darachweb@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-xs font-mono tracking-wide text-white/40">
+      <span>© <span id="year"></span> Darach Digital Creative. All rights reserved.</span>
+      <span>Crafted in Lagos — for businesses everywhere.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky WhatsApp (mobile) -->
+<a href="https://wa.me/2348030417508?text=Hello%20Darach%2C%20I%20need%20help%20with%20a%20website%2Flogo." target="_blank" class="lg:hidden fixed bottom-5 right-5 w-14 h-14 bg-[#25D366] text-white rounded-full shadow-xl flex items-center justify-center z-40">
+  <i data-lucide="message-circle" class="w-7 h-7"></i>
+</a>
+
+<script>
+  lucide.createIcons();
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile menu
+  const btn = document.getElementById('mobileBtn');
+  const menu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+  let open = false;
+  btn.addEventListener('click', () => {
+    open = !open;
+    menu.classList.toggle('hidden', !open);
+    menuIcon.setAttribute('data-lucide', open ? 'x' : 'menu');
+    lucide.createIcons();
+  });
+  document.querySelectorAll('.mobile-link').forEach(a => a.addEventListener('click', () => {
+    open = false; menu.classList.add('hidden');
+    menuIcon.setAttribute('data-lucide','menu'); lucide.createIcons();
+  }));
+
+  // Portfolio filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.portfolio-item');
+  filterBtns.forEach(b => {
+    b.addEventListener('click', () => {
+      filterBtns.forEach(x => { x.classList.remove('active','bg-[#0B0B0B]','text-white'); x.classList.add('text-[#4A4A4A]'); });
+      b.classList.add('active','bg-[#0B0B0B]','text-white'); b.classList.remove('text-[#4A4A4A]');
+      const f = b.dataset.filter;
+      items.forEach(it => {
+        const cat = it.dataset.category;
+        if (f === 'all' || cat === f) {
+          it.style.display = ''; it.classList.remove('hide');
+          setTimeout(()=> { it.style.opacity='1'; it.style.transform='none'; }, 10);
+        } else {
+          it.style.opacity='0'; it.style.transform='scale(.98)';
+          setTimeout(()=> it.style.display='none', 300);
+        }
+      });
+    });
+  });
+
+  // Contact form -> WhatsApp
+  document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('fName').value.trim();
+    const business = document.getElementById('fBusiness').value.trim();
+    const service = document.getElementById('fService').value;
+    const budget = document.getElementById('fBudget').value;
+    const msg = document.getElementById('fMessage').value.trim();
+    const text = `Hello Darach,%0A%0AI'm ${encodeURIComponent(name)} from ${encodeURIComponent(business)}.%0A%0AService: ${encodeURIComponent(service)}%0ABudget: ${encodeURIComponent(budget)}%0A%0ADetails: ${encodeURIComponent(msg || 'I would like to discuss my project.')}%0A%0APlease let me know the next steps.`;
+    window.open(`https://wa.me/2348030417508?text=${text}`, '_blank');
+  });
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(ent=>{ if(ent.isIntersecting) ent.target.classList.add('in'); });
+  }, { threshold:.12 });
+  document.querySelectorAll('.reveal').forEach(el=> observer.observe(el));
+
+  // Header shadow on scroll
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > 10) header.classList.add('shadow-sm');
+    else header.classList.remove('shadow-sm');
+  });
+
+  // Active nav on scroll
+  const sections = ['home','services','portfolio','pricing','about','contact'];
+  const navLinks = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll', ()=>{
+    let current = 'home';
+    sections.forEach(id=>{
+      const el = document.getElementById(id);
+      if(el && window.scrollY >= el.offsetTop - 120) current = id;
+    });
+    navLinks.forEach(a=>{
+      a.classList.toggle('active', a.getAttribute('href') === '#'+current);
+    });
+  });
+</script>
+</body>
+</html>
